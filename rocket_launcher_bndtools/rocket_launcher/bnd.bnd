@@ -1,0 +1,7 @@
+Bundle-Version: 0.0.0.${tstamp}
+-sub:  \
+	*.bnd
+-buildpath:  \
+	org.amdatu.web.rest.jaxrs,\
+	org.apache.felix.dependencymanager,\
+	osgi.core

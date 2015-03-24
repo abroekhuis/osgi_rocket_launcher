@@ -1,0 +1,3 @@
+add_subdirectory(rocket_launcher_component)
+add_subdirectory(rocket_launcher_console)
+add_subdirectory(rocket_launcher_endpoint)

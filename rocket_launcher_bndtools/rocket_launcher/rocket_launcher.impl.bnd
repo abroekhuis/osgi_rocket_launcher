@@ -1,0 +1,3 @@
+Private-Package:  \
+	eu.luminis.devcon.rest
+Bundle-Activator: eu.luminis.devcon.rest.Activator
