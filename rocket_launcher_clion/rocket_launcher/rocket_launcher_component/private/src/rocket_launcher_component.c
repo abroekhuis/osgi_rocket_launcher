@@ -77,7 +77,9 @@ celix_status_t rocketLauncher_componentExit(void *_ptr) {
 celix_status_t rocketLauncher_stop(rocket_launcher_component_pt component) {
     log_service_pt log_service = component->log_service_ptr;
 
-    libusb_control_transfer(component->devHandle,  BM_REQUEST_TYPE, B_REQUEST, W_VALUE, W_INDEX, STOP, 5, TIMEOUT);
+    if (component->devHandle != NULL) {
+        libusb_control_transfer(component->devHandle,  BM_REQUEST_TYPE, B_REQUEST, W_VALUE, W_INDEX, STOP, 5, TIMEOUT);
+    }
 
     if (log_service) {
         log_service->log(log_service->logger, OSGI_LOGSERVICE_INFO, "Stop");
@@ -88,7 +90,10 @@ celix_status_t rocketLauncher_stop(rocket_launcher_component_pt component) {
 
 celix_status_t rocketLauncher_up(rocket_launcher_component_pt component) {
     log_service_pt log_service = component->log_service_ptr;
-    libusb_control_transfer(component->devHandle,  BM_REQUEST_TYPE, B_REQUEST, W_VALUE, W_INDEX, UP, 5, TIMEOUT);
+
+    if (component->devHandle != NULL) {
+        libusb_control_transfer(component->devHandle,  BM_REQUEST_TYPE, B_REQUEST, W_VALUE, W_INDEX, UP, 5, TIMEOUT);
+    }
 
     if (log_service) {
         log_service->log(log_service->logger, OSGI_LOGSERVICE_INFO, "Up");
@@ -100,7 +105,10 @@ celix_status_t rocketLauncher_up(rocket_launcher_component_pt component) {
 celix_status_t rocketLauncher_down(rocket_launcher_component_pt component) {
     log_service_pt log_service = component->log_service_ptr;
 
-    libusb_control_transfer(component->devHandle,  BM_REQUEST_TYPE, B_REQUEST, W_VALUE, W_INDEX, DOWN, 5, TIMEOUT);
+    if (component->devHandle != NULL) {
+        libusb_control_transfer(component->devHandle,  BM_REQUEST_TYPE, B_REQUEST, W_VALUE, W_INDEX, DOWN, 5, TIMEOUT);
+    }
+
     if (log_service) {
         log_service->log(log_service->logger, OSGI_LOGSERVICE_INFO, "Down");
     }
@@ -111,7 +119,9 @@ celix_status_t rocketLauncher_down(rocket_launcher_component_pt component) {
 celix_status_t rocketLauncher_left(rocket_launcher_component_pt component) {
     log_service_pt log_service = component->log_service_ptr;
 
-    libusb_control_transfer(component->devHandle,  BM_REQUEST_TYPE, B_REQUEST, W_VALUE, W_INDEX, LEFT, 5, TIMEOUT);
+    if (component->devHandle != NULL) {
+        libusb_control_transfer(component->devHandle,  BM_REQUEST_TYPE, B_REQUEST, W_VALUE, W_INDEX, LEFT, 5, TIMEOUT);
+    }
     if (log_service) {
         log_service->log(log_service->logger, OSGI_LOGSERVICE_INFO, "Left");
     }
@@ -122,7 +132,10 @@ celix_status_t rocketLauncher_left(rocket_launcher_component_pt component) {
 celix_status_t rocketLauncher_right(rocket_launcher_component_pt component) {
     log_service_pt log_service = component->log_service_ptr;
 
-    libusb_control_transfer(component->devHandle,  BM_REQUEST_TYPE, B_REQUEST, W_VALUE, W_INDEX, RIGHT, 5, TIMEOUT);
+    if (component->devHandle != NULL) {
+        libusb_control_transfer(component->devHandle,  BM_REQUEST_TYPE, B_REQUEST, W_VALUE, W_INDEX, RIGHT, 5, TIMEOUT);
+    }
+
     if (log_service) {
         log_service->log(log_service->logger, OSGI_LOGSERVICE_INFO, "Right");
     }
@@ -133,7 +146,10 @@ celix_status_t rocketLauncher_right(rocket_launcher_component_pt component) {
 celix_status_t rocketLauncher_fire(rocket_launcher_component_pt component) {
     log_service_pt log_service = component->log_service_ptr;
 
-    libusb_control_transfer(component->devHandle,  BM_REQUEST_TYPE, B_REQUEST, W_VALUE, W_INDEX, FIRE, 5, TIMEOUT);
+    if (component->devHandle != NULL) {
+        libusb_control_transfer(component->devHandle,  BM_REQUEST_TYPE, B_REQUEST, W_VALUE, W_INDEX, FIRE, 5, TIMEOUT);
+    }
+
     if (log_service) {
         log_service->log(log_service->logger, OSGI_LOGSERVICE_INFO, "Fire");
     }
