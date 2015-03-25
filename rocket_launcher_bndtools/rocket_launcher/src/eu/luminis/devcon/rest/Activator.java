@@ -14,6 +14,7 @@ public class Activator extends DependencyActivatorBase {
 		manager.add(createComponent()
 				.setInterface(Object.class.getName(), null)
 				.setImplementation(RocketLauncherRest.class)
+				.setCallbacks(null, null, null, null)
 				.add(createServiceDependency().setService(RocketLauncher.class).setRequired(true))
 				);
 		
