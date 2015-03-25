@@ -6,12 +6,15 @@
 #define _LUMINIS_DEVCON_ROCKET_LAUNCHER_COMPONENT_H_
 
 #include <log_service/log_service.h>
+#include <libusb.h>
 
 #include "rocket_launcher.h"
 
 struct rocket_launcher_component {
     log_service_pt log_service_ptr;
     celix_thread_mutex_t log_service_lock;
+    struct libusb_context *context;
+    libusb_device_handle* devHandle;
 };
 
 celix_status_t rocketLauncher_create(rocket_launcher_component_pt *rocket_launcher_component_ptr);

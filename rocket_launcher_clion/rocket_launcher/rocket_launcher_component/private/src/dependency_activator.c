@@ -40,8 +40,8 @@ celix_status_t dm_init(void * user_data_ptr, bundle_context_pt context, dm_depen
 
     component_create(context, manager, &activator_ptr->service_ptr);
     component_setImplementation(activator_ptr->service_ptr, activator_ptr->rocket_launcher_component_ptr);
-//    component_setCallbacks(activator_ptr->service_ptr, rocketLauncher_componentInit, rocketLauncher_componentStart,
-//            rocketLauncher_componentStop, rocketLauncher_componentExit);
+    component_setCallbacks(activator_ptr->service_ptr, rocketLauncher_componentInit, rocketLauncher_componentStart,
+            rocketLauncher_componentStop, rocketLauncher_componentExit);
 
     activator_ptr->rocket_launcher_service_ptr = calloc(1, sizeof(*activator_ptr->rocket_launcher_service_ptr));
     activator_ptr->rocket_launcher_service_ptr->rocket_launcher_component_ptr = activator_ptr->rocket_launcher_component_ptr;

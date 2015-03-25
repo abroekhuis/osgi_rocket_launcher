@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.8)
 
 project(Luminis-DevCon C)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "/Users/abroekhuis/Development/Celix/usr/local/share/celix/cmake/modules")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "/opt/local/share/celix/cmake/modules")
 
 find_package(CELIX REQUIRED)
 find_package(Jansson REQUIRED)

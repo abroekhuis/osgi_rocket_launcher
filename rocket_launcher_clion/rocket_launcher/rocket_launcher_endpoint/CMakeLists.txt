@@ -14,8 +14,5 @@ bundle(
 		private/src/dependency_activator.c
 		${CELIX_BUNDLES_DIR}/../log_service/log_helper.c
 	LINK_LIBRARIES
-		${CELIX_FRAMEWORK_LIBRARY}
-		${CELIX_UTILS_LIBRARY}
-		${JANSSON_LIBRARIES}
-		-Wl,-all_load /Users/abroekhuis/Development/Celix/usr/local/lib/libdependency_manager2.a
+        -Wl,--whole-archive /opt/local/lib/libdependency_manager2.a -Wl,--no-whole-archive ${CELIX_FRAMEWORK_LIBRARY} ${CELIX_UTILS_LIBRARY} ${JANSSON_LIBRARIES}
 )
